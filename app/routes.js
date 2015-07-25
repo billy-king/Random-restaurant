@@ -52,7 +52,11 @@ module.exports = function(app, passport) {
             user : req.user // get the user out of session and pass to template
         });
     });
-
+    app.get('/profile-google', isLoggedIn, function(req, res) {
+        res.render('profile-google.jade', {
+            user : req.user // get the user out of session and pass to template
+        });
+    });
     // =====================================
     // LOGOUT ==============================
     // =====================================
